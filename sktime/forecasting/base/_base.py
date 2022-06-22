@@ -1218,7 +1218,7 @@ class BaseForecaster(BaseEstimator):
         # end checking X
 
         # compatibility checks between X and y
-        if X is not None and y is not None:
+        if X is not None and y is not None and not self.get_tag("ignores-exogeneous-X"):
             if self.get_tag("X-y-must-have-same-index"):
                 check_equal_time_index(X, y, mode="contains")
 

@@ -36,7 +36,8 @@ class Aggregator(BaseTransformer):
         # todo instance wise?
         "scitype:instancewise": True,  # is this an instance-wise transform?
         "X_inner_mtype": [
-            "pd.Series",
+            "pd.DataFrame",
+            # "pd.Series",
             "pd.DataFrame",
             "pd-multiindex",
             "pd_multiindex_hier",
