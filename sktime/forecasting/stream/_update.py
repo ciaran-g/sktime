@@ -173,14 +173,14 @@ class UpdateRefitsEvery(_DelegatedForecaster):
             else:
                 y_win = _y
                 X_win = _X
-            fh = self._fh
-            estimator.fit(y=y_win, X=X_win, fh=fh, update_params=update_params)
+            # fh = self._fh
+            estimator.update(y=y_win, X=X_win, update_params=True)
 
             # remember that we just fitted the estimator
             self.last_fit_cutoff_ = self.cutoff
         else:
             # if no: call update as usual
-            estimator.update(y=y, X=X, update_params=update_params)
+            estimator.update(y=y, X=X, update_params=False)
         return self
 
     @classmethod
